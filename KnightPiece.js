@@ -6,6 +6,8 @@ class KnightPiece{
     constructor(row, column){
         this.row = row;
         this.column = column;
+        // To be clear, the rows are counted from top to bottom
+        // As for the columns, they increase from left to right
         this.knightMoveOffsets = [[-1,-2],[-2,-1],
                                   [-2,1],[-1,2],
                                   [1,-2],[2,-1],
@@ -32,4 +34,4 @@ class KnightPiece{
     }
 }
 
-modules.exports = {KnightPiece};
+module.exports = {KnightPiece};

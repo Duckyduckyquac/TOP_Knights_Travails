@@ -10,15 +10,21 @@ class Board{
         this.maxRow = 7;
         this.maxColumn = 7;        
     }
-    isValidSquare(square){
-        if((square.row <= this.maxRow)&&
-           (square.column <= this.maxColumn)&&
-           (square.row >= this.minRow)&&
-           (square.column >= this.minColumn)){
-                return true;
-           }
+    isValidSquare(squareArr){
+        if(Array.isArray(squareArr)!==true){
+            throw new Error('This must be an array of row by column');
+        }
         else{
-            return false;
+            if((squareArr[0]<=this.maxRow)&&
+               (squareArr[1]<=this.maxColumn)&&
+               (squareArr[0]>= this.minRow)&&
+               (squareArr[1]>= this.minColumn)){
+                return true;
+            }
+            else{
+                return false;
+            }
+
         }
     }
 }
